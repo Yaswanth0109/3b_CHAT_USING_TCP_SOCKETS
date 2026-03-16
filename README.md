@@ -8,18 +8,9 @@ To write a python program for creating Chat using TCP Sockets Links.
  server
 4. Send and receive the message using the send function in socket.
 ## PROGRAM
+
+Server side
 ```
-client.py
-import socket 
-s=socket.socket() 
-s.connect(('localhost',8000)) 
-while True: 
-    msg=input("Client > ") 
-    s.send(msg.encode()) 
-    print("Server > ",s.recv(1024).decode())
-```
-```
-server.py
 import socket 
 s=socket.socket() 
 s.bind(('localhost',8000)) 
@@ -31,8 +22,22 @@ while True:
             msg=input("Server > ") 
             c.send(msg.encode())
 ```
+Client side
+```
+import socket 
+s=socket.socket() 
+s.connect(('localhost',8000)) 
+while True: 
+    msg=input("Client > ") 
+    s.send(msg.encode()) 
+    print("Server > ",s.recv(1024).decode())
+
+```
 ## OUPUT
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/58eaf109-6e8c-4d4d-b6be-6ea852adb86b" />
+Server side
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/1f40e416-8d4e-4472-b69e-7b9deb285256" />
+Client side 
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/defe8b2b-b38e-45bf-95c0-ca25f6f517a6" />
 
 ## RESULT
 Thus, the python program for creating Chat using TCP Sockets Links was successfully 
